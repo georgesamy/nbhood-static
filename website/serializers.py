@@ -61,3 +61,12 @@ class PageSerializer(serializers.ModelSerializer):
             data[key] = value
 
         return data       
+
+class ImageArraySerializerField(serializers.ListField):
+
+    def to_internal_value(self, data):
+        return data
+
+    def to_representation(self, data):
+        return [{'image' : item.image.url} for item in data.all()]
+
