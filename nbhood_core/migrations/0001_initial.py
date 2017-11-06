@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=255)),
                 ('value', models.TextField()),
-                ('component', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='textboxs', to='website.Component')),
+                ('component', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='textboxs', to='nbhood_core.Component')),
             ],
         ),
         migrations.CreateModel(
@@ -36,7 +36,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=255)),
                 ('value', models.CharField(max_length=255)),
-                ('component', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='titles', to='website.Component')),
+                ('component', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='titles', to='nbhood_core.Component')),
             ],
         ),
         migrations.CreateModel(
@@ -49,6 +49,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='component',
             name='page',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='components', to='website.Page'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='components', to='nbhood_core.Page'),
         ),
     ]
